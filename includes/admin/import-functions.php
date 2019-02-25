@@ -816,10 +816,11 @@ function give_save_import_donation_to_db( $raw_key, $row_data, $main_key = array
 	 * @param array $payment_data donation data
 	 * @param array $donor_data donor data
 	 * @param object $donor_data form object
+	 * @param array $import_settings Import options.
 	 *
 	 * @return array $payment_data payment data
 	 */
-	$payment_data = apply_filters( 'give_import_before_import_payment', $payment_data, $data, $donor_data, $form );
+	$payment_data = apply_filters( 'give_import_before_import_payment', $payment_data, $data, $donor_data, $form, $import_settings );
 
 	// Get the report
 	$report = give_import_donation_report();
